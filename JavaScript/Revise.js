@@ -44,4 +44,22 @@ variables declared with var can be redeclared with same name and reassigned valu
 
 //                        Numbers Methods                       //
 
+let score = 20;
+// let divide = score / 2; //gives Quottient
+// let modulus = score % 2; //give modules
+// console.log(modulus);
+//Mathematical Expression
+// 1 ()
+// 2 ** power operator
+// 3 * / % (from left to right)
+// 4 + - (from left to right)
 
+//Type convertion
+let result="Total Score :"+score
+console.log(result);
+// loose == vs Strict === equality operator
+let number=20
+console.log(number=="20"); // return true check only value and automaticatically type coercion from one type to another type.
+
+let num1="20"
+console.log(typeof Number(num1));
