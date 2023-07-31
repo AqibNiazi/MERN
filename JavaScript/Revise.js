@@ -44,7 +44,7 @@ variables declared with var can be redeclared with same name and reassigned valu
 
 //                        Numbers Methods                       //
 
-let score = 20;
+// let score = 20;
 // let divide = score / 2; //gives Quottient
 // let modulus = score % 2; //give modules
 // console.log(modulus);
@@ -55,11 +55,24 @@ let score = 20;
 // 4 + - (from left to right)
 
 //Type convertion
-let result="Total Score :"+score
-console.log(result);
+// let result="Total Score :"+score
+// console.log(result);
 // loose == vs Strict === equality operator
-let number=20
-console.log(number=="20"); // return true check only value and automaticatically type coercion from one type to another type.
+// let number=20
+// console.log(number=="20"); // return true check only value and automaticatically type coercion from one type to another type.
 
-let num1="20"
-console.log(typeof Number(num1));
+// let age=20;
+// let stringOfAge=String(age)
+// let booleanOfAge=Boolean(age)
+// console.log("Age " + booleanOfAge);
+
+//                                          Arrays                                  //
+const summerMonths=["april","may","june","july","august","september"]
+const winterMonths=["january","february","march","october","november","december"]
+console.log(winterMonths.concat(summerMonths)); //gives combination of both arrays.
+console.log(summerMonths.push("October")); //Appends new elements to the end of an array, and returns the new length of the array.
+console.log(summerMonths);
+console.log(summerMonths.pop()); //Removes the last element from an array and returns it. If the array is empty, undefined is returned and the array is not modified.
+console.log(summerMonths);
+
+ 
