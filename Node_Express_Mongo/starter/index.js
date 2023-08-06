@@ -1,5 +1,7 @@
 const fs = require("fs");
-const http=require('http')
+const http = require("http");
+const { json } = require("node:stream/consumers");
+const url = require("url");
 // //Blocking,synchronous way
 // const textIn = fs.readFileSync("./txt/input.txt", "utf-8");
 // const textout = `This is what we know about Avacado : ${textIn}`;
@@ -21,10 +23,26 @@ const http=require('http')
 // console.log("will read file!");
 
 // Setting up a server
-const server=http.createServer((req,res)=>{
-  res.end("Hello from node server")
+const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, "utf-8");
+const dataObject = JSON.parse(data);
 
-})
-server.listen(8080,'127.0.0.1',()=>{
+const server = http.createServer((req, res) => {
+  const pathName = req.url;
+  if (pathName === "/" || pathName === "/overview") {
+    res.end("This is overview");
+  } else if (pathName === "/product") {
+    res.end("this is product");
+  } else if (pathName === "/api") {
+    res.writeHead(200, { "Content-type": "application/json" });
+
+    res.end(data);
+  } else {
+    res.writeHead(404, {
+      contentType: "text/html",
+    });
+    res.end("<h1>Page Not Found!</h1>");
+  }
+});
+server.listen(8080, "127.0.0.1", () => {
   console.log("server listening requests on port :8080");
-})
+});
